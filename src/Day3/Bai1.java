@@ -6,7 +6,7 @@ import java.io.IOException;
 public class Bai1 {
     static class SinglyLinkedListNode {
         public int data;
-        public Bai5.SinglyLinkedListNode next;
+        public SinglyLinkedListNode next;
 
         public SinglyLinkedListNode(int nodeData) {
             this.data = nodeData;
@@ -15,8 +15,8 @@ public class Bai1 {
     }
 
     static class SinglyLinkedList {
-        public Bai5.SinglyLinkedListNode head;
-        public Bai5.SinglyLinkedListNode tail;
+        public SinglyLinkedListNode head;
+        public SinglyLinkedListNode tail;
 
         public SinglyLinkedList() {
             this.head = null;
@@ -24,7 +24,7 @@ public class Bai1 {
         }
 
         public void insertNode(int nodeData) {
-            Bai5.SinglyLinkedListNode node = new Bai5.SinglyLinkedListNode(nodeData);
+            SinglyLinkedListNode node = new SinglyLinkedListNode(nodeData);
 
             if (this.head == null) {
                 this.head = node;
@@ -36,7 +36,7 @@ public class Bai1 {
         }
     }
 
-    public static void printSinglyLinkedList(Bai5.SinglyLinkedListNode node, String sep, BufferedWriter bufferedWriter) throws IOException {
+    public static void printSinglyLinkedList(SinglyLinkedListNode node, String sep, BufferedWriter bufferedWriter) throws IOException {
         while (node != null) {
             bufferedWriter.write(String.valueOf(node.data));
 
@@ -48,11 +48,11 @@ public class Bai1 {
         }
     }
 
-    static Bai5.SinglyLinkedListNode mergeLists(Bai5.SinglyLinkedListNode head1, Bai5.SinglyLinkedListNode head2) {
+    static SinglyLinkedListNode mergeLists(SinglyLinkedListNode head1, SinglyLinkedListNode head2) {
         if (head1 == null) return head2;
         if (head2 == null) return head1;
 
-        Bai5.SinglyLinkedListNode mergedHead;
+        SinglyLinkedListNode mergedHead;
 
         if (head1.data <= head2.data) {
             mergedHead = head1;
@@ -62,7 +62,7 @@ public class Bai1 {
             head2 = head2.next;
         }
 
-        Bai5.SinglyLinkedListNode current = mergedHead;
+        SinglyLinkedListNode current = mergedHead;
 
         while (head1 != null && head2 != null) {
             if (head1.data <= head2.data) {
